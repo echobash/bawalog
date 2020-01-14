@@ -26,6 +26,7 @@ class Birthday_wishes_model extends CI_Model{
                 $this->db->join("bs_user","bs_birthday_wishes.user_id=bs_user.user_id");
                 $this->db->where("bs_birthday_wishes.wisher_id",$user_id);
             }
+            $this->db->order_by("bs_birthday_wishes.birthday_wishes_id","desc");
             $result= $this->db->get()->result();
             //echo $this->db->last_query();die;
             return $result;

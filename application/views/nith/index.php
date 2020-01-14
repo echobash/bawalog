@@ -143,7 +143,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div class="messageWrapper col-md-12 col-xs-12">
                                             <p class="col-md-6 col-xs-7" style="font-weight:bold;"><?php echo $value->message ?></p>
                                             <p class="col-md-6 col-xs-5" style="font-style:italic;color:green;"><?php echo $value->firstname . " " . $value->lastname . "<br>";
-                                                                                                                echo date('d M Y H:i:s', strtotime($user->added_on)); ?></p>
+                                                                                                                echo date('d M Y H:i:s', strtotime($value->added_on)); ?></p>
                                         </div>
                                     </div>
                                 <?php }
@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <div class="messageWrapper col-md-12 col-xs-12">
                                             <p class="col-md-6 col-xs-7" style="font-weight:bold;"><?php echo $value->message ?></p>
                                             <p class="col-md-6 col-xs-5" style="font-style:italic;color:green;"><?php echo $value->firstname . " " . $value->lastname . "<br>";
-                                                                                                                echo date('d M Y H:i:s', strtotime($user->added_on)); ?></p>
+                                                                                                                echo date('d M Y H:i:s', strtotime($value->added_on)); ?></p>
                                         </div>
                                     </div>
                                 <?php }
