@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             /* border-radius: 50%; */
             object-fit: contain;
             border: 5px solid #ddd;
-            background: #ddd;
+            background-size: cover;
             object-position: center;
         }
 
@@ -39,7 +39,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         .imgDiv {
-            text-align: center
+            background-image: url("https://images.unsplash.com/photo-1521016257192-677ab9ffd16c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            text-align: center;
+            /* background-position: bottom; */
+            /* background-size: cover; */
         }
 
         .userDetailsDiv {
@@ -69,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             font-size: 20px;
         }
 
-        .nav li{
+        .nav li {
             display: inline;
             list-style: none
         }
@@ -84,14 +87,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 
     <div id="container">
+        <input type="hidden" id="refreshed" value="no">
         <?php if (!empty($user)) { ?>
             <div class="col-md-12 col-xs-12 profile">
 
                 <div class="col-xs-12 col-md-offset-3 col-md-6">
                     <ul class="nav">
-                        <a href="#"><li>My Profile</li></a>
-                        <a href="<?php echo base_url('nith/friendList?user_id='.$user->user_id.'')?>"><li>Find Friends</li></a>
-                        <a href="#inbox"><li>Messages</li></a>
+                        <a href="<?php echo base_url('nith?user_id=' . $user->user_id . '') ?>">
+                            <li>My Profile</li>
+                        </a>
+                        <a href="<?php echo base_url('nith/friendList?user_id=' . $user->user_id . '') ?>">
+                            <li>Find Friends</li>
+                        </a>
+                        <a href="#inbox">
+                            <li>Messages</li>
+                        </a>
                     </ul>
                 </div>
                 <div class="userParentDiv">
@@ -196,6 +206,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
         })
     </script>
     <script>
+        // setTimeout(function() {
+        //     window.location.reload();
+        // }, 2000);
         $('#submit').on('click', function() {
             var about = $(this).siblings('.aboutContent').text();
             var user_id = '<?php echo $user->user_id ?>';

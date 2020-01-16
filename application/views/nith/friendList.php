@@ -70,13 +70,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <div class="col-xs-12 col-md-offset-3 col-md-6">
                     <ul class="nav">
-                        <a href="#">
+                        <a href="<?php echo base_url('nith?user_id=' . $user_id . '') ?>">
                             <li>My Profile</li>
                         </a>
-                        <a href="<?php echo base_url('nith/friendList?user_id=' . $user->user_id . '') ?>">
+                        <a href="<?php echo base_url('nith/friendList?user_id=' . $user_id . '') ?>">
                             <li>Find Friends</li>
                         </a>
-                        <a href="#inbox">
+                        <a href="<?php echo base_url('nith?user_id=' . $user_id . '') ?>">
                             <li>Messages</li>
                         </a>
                     </ul>
@@ -143,6 +143,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script>
         $(document).ready(function() {
+            
             var selectedVal = ''
             var logged_user_id = '<?php echo $_GET['user_id'] ?>'
             $('#search').on('change', function() {
