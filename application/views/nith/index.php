@@ -6,6 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <head>
     <meta charset="utf-8">
+    <meta property="og:image" content="<?php echo $user->image?>">
     <title>Welcome to Bawa Log</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
