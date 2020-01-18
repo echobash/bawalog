@@ -3,6 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Nith extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        // Your own constructor code
+    }
+
     public function index()
     {
         try {
@@ -46,7 +52,7 @@ class Nith extends CI_Controller
             $message = $this->input->post('message');
             $this->load->model('birthday_wishes_model');
             if ($user_id && $message && $wisher_id) {
-                $data = array('user_id' => $user_id,'wisher_id'=>$wisher_id,'message'=>$message);
+                $data = array('user_id' => $user_id, 'wisher_id' => $wisher_id, 'message' => $message);
                 $result = $this->birthday_wishes_model->saveMessage($data);
                 if ($result) {
                     $resp['status'] = "success";
@@ -62,8 +68,8 @@ class Nith extends CI_Controller
     public function friendList()
     {
         try {
-            $data['title'] = "Friend List"; 
-            $data['user_id'] = $this->input->get('user_id'); 
+            $data['title'] = "Friend List";
+            $data['user_id'] = $this->input->get('user_id');
             $this->load->model('user_model');
             $data['user'] = $this->user_model->getFriendList($data['user_id']);
             $this->load->view('nith/friendList', $data);

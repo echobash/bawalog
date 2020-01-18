@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <style type="text/css">
         #container {
             height: 100vh;
-            padding: 10px
+            padding: 8px
         }
 
         .nav li {
@@ -31,21 +31,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         .friendList {
             margin-top: 10px;
-            margin-bottom: 10px;
             background: #d4d2d2;
         }
 
         .imgDiv {
-            /* text-align: center */
+            background-image: url("https://images.unsplash.com/photo-1521016257192-677ab9ffd16c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            text-align: center;
+            /* background-position: bottom; */
+            /* background-size: cover; */
         }
 
         img {
             height: 120px;
             width: 100%;
             border-radius: 5%;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            background: #ddd;
+            object-fit: contain;
             object-position: center;
         }
 
@@ -146,7 +146,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             
             var selectedVal = ''
             var logged_user_id = '<?php echo $_GET['user_id'] ?>'
-            $('#search').on('change', function() {
+            $('#search').on('keyup', function() {
                 var that = $(this)
                 selectedVal = that.val()
                 $('.friendList').find('.name').each(function(k, v) {

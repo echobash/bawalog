@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta property="og:title" content="Bawa Log">
-    <meta property="og:description" content="A mini social site to connect to other bawalog.">
+    <meta property="og:description" content="<b>A mini social site to connect to other bawalog.</b>">
     <meta property="og:image" content="<?php echo $user->image ?>">
     <title>Welcome to Bawa Log</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <style type="text/css">
         #container {
             height: 100vh;
-            padding: 10px
+            padding: 8px
         }
 
         img {
