@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style type="text/css">
-        #container {
+    #container {
             height: 100vh;
             padding: 8px
         }
@@ -84,6 +84,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
             cursor: pointer;
 
         }
+
+        .navdiv {
+            background:#ddd;
+            padding:0px;
+        }
+        .navdiv a {
+            background: #537782;
+            padding:8px;
+            color:white
+        }
+        
     </style>
 </head>
 
@@ -94,15 +105,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <?php if (!empty($user)) { ?>
             <div class="col-md-12 col-xs-12 profile">
 
-                <div class="col-xs-12 col-md-offset-3 col-md-6">
-                    <ul class="nav">
-                        <a href="<?php echo base_url('nith?user_id=' . $user->user_id . '') ?>">
+                <div class="col-xs-12 col-md-offset-3 col-md-6 navdiv">
+                    <ul class="nav ">
+                        <a class="col-xs-4 text-center" href="<?php echo base_url('nith?user_id=' . $user->user_id . '') ?>">
                             <li>My Profile</li>
                         </a>
-                        <a href="<?php echo base_url('nith/friendList?user_id=' . $user->user_id . '') ?>">
+                        <a class="col-xs-4 text-center" href="<?php echo base_url('nith/friendList?user_id=' . $user->user_id . '') ?>">
                             <li>Find Friends</li>
                         </a>
-                        <a href="#inbox">
+                        <a class="col-xs-4 text-center" href="#inbox">
                             <li>Messages</li>
                         </a>
                     </ul>
