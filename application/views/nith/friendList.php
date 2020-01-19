@@ -8,6 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta charset="utf-8">
     <title>Welcome to Bawa Log</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -80,13 +81,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="col-xs-12 col-md-offset-3 col-md-6 navdiv">
                     <ul class="nav ">
                         <a class="col-xs-4 text-center" href="<?php echo base_url('nith?user_id=' . $user->user_id . '') ?>">
-                            <li>My Profile</li>
+                            <li>My Profile <i class="fa fa-user" aria-hidden="true"></i>
+                            </li>
                         </a>
                         <a class="col-xs-4 text-center" href="<?php echo base_url('nith/friendList?user_id=' . $user->user_id . '') ?>">
                             <li>Find Friends</li>
                         </a>
                         <a class="col-xs-4 text-center" href="#inbox">
-                            <li>Messages</li>
+                            <li>Messages <i class='fas fa-comment-dots'></i>
+                            </li>
                         </a>
                     </ul>
                 </div>
