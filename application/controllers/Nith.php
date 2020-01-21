@@ -7,15 +7,13 @@ class Nith extends CI_Controller
     {
         parent::__construct();
         $config = array();
-        $config['useragent']           = "CodeIgniter";
-        $config['mailpath']            = "/usr/bin/sendmail"; // or "/usr/sbin/sendmail"
-        $config['protocol']            = "mail";
-        $config['smtp_host']           = "localhost";
-        $config['smtp_port']           = "25";
-        $config['mailtype'] = 'html';
-        $config['charset']  = 'utf-8';
-        $config['newline']  = "\r\n";
-        $config['wordwrap'] = TRUE;
+        $config = array(
+            'protocol' => 'sendmail',
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'wordwrap' => TRUE
+
+        );
 
         $this->load->library('email');
 
@@ -33,7 +31,7 @@ class Nith extends CI_Controller
             $data['inboxWishes'] = $this->birthday_wishes_model->getBirthdaysWishes($user_id, "inbox");
             $data['outboxWishes'] = $this->birthday_wishes_model->getBirthdaysWishes($user_id, "outbox");
             //echo "<pre>";print_r($data);die;
-            $data['user_id']=$user_id;
+            $data['user_id'] = $user_id;
             $this->load->view('nith/index', $data);
         } catch (\Throwable $th) {
             //throw $th;
@@ -76,12 +74,16 @@ class Nith extends CI_Controller
                 $this->email->subject('very crucial email');
                 $this->email->message('writing a crucial mail that you must receive');
                 $this->email->set_header('get it fast', 'ok i will');
-                $email_status =$this->email->send();
-               var_dump($this->email->print_debugger());
-                echo "<pre>";var_dump($email_status);die;
+                $email_status = $this->email->send();
+                var_dump($this->email->print_debugger());
+                echo "<pre>";
+                var_dump($email_status);
+                die;
                 if ($result) {
                     $resp['status'] = "success";
-                    echo "<pre>";print_r($email_status);die;
+                    echo "<pre>";
+                    print_r($email_status);
+                    die;
                 } else {
                     $resp['status'] = "fail";
                 }
