@@ -64,7 +64,7 @@ class Nith extends CI_Controller
                 $this->email->message('writing a crucial mail that you must receive');
                 $this->email->set_header('get it fast', 'ok i will');
                 $email_status =$this->email->send();
-                $this->email->print_debugger();
+               var_dump($this->email->print_debugger());
                 echo "<pre>";var_dump($email_status);die;
                 if ($result) {
                     $resp['status'] = "success";
