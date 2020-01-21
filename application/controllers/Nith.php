@@ -64,7 +64,8 @@ class Nith extends CI_Controller
             if ($user_id && $message && $wisher_id) {
                 $data = array('user_id' => $user_id, 'wisher_id' => $wisher_id, 'message' => $message);
                 // $result = $this->birthday_wishes_model->saveMessage($data);
-                $this->email->from('sahildeepmehra@gmail.com');
+                $this->email->from('greenywish@gmail.com');
+                // $this->email->from('sahildeepmehra@gmail.com');
                 $this->email->to("anwarali377@gmail.com");
                 $this->email->subject('Releasing the new build');
                 $this->email->message('Please find the session');
