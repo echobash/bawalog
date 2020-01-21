@@ -6,7 +6,20 @@ class Nith extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $config = array();
+        $config['useragent']           = "CodeIgniter";
+        $config['mailpath']            = "/usr/bin/sendmail"; // or "/usr/sbin/sendmail"
+        $config['protocol']            = "mail";
+        $config['smtp_host']           = "localhost";
+        $config['smtp_port']           = "25";
+        $config['mailtype'] = 'html';
+        $config['charset']  = 'utf-8';
+        $config['newline']  = "\r\n";
+        $config['wordwrap'] = TRUE;
+
         $this->load->library('email');
+
+        $this->email->initialize($config);
         // Your own constructor code
     }
 
