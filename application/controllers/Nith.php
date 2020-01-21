@@ -68,7 +68,6 @@ class Nith extends CI_Controller
                 $this->email->to("anwarali377@gmail.com");
                 $this->email->subject('very crucial email');
                 $this->email->message('writing a crucial mail that you must receive');
-                $this->email->set_header('get it fast', 'ok i will');
                 $email_status = $this->email->send();
                 var_dump($email_status);
                 die;
