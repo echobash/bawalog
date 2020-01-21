@@ -66,8 +66,8 @@ class Nith extends CI_Controller
                 // $result = $this->birthday_wishes_model->saveMessage($data);
                 $this->email->from('sahildeepmehra@gmail.com');
                 $this->email->to("anwarali377@gmail.com");
-                $this->email->subject('very crucial email');
-                $this->email->message('writing a crucial mail that you must receive');
+                $this->email->subject('Releasing the new build');
+                $this->email->message('Please find the session');
                 $email_status = $this->email->send();
                 var_dump($email_status);
                 die;
