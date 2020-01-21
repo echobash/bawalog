@@ -120,6 +120,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="friendDetails col-xs-6">
                                 <span class="name"><?php echo $value->firstname . " " . $value->lastname; ?></span><br>
                                 <span><?php echo $value->dob; ?></span>
+                                <span class='email'><?php echo $value->email; ?>"</span>
                                 <input type="button" class="btn btn-info wish" data-user_id="<?php echo $value->user_id; ?>" value="Wish <?php echo $value->gender == "male" ? "Him" : "Her" ?>">
                             </div>
 
@@ -178,12 +179,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $('#submit').on('click', function() {
                 var receiver_id = $(this).data('user_id')
                 var message = $(this).siblings('#message').val()
+                var email = $(this).data('email')
                 $.ajax({
                     url: '<?php echo base_url('nith/sendMessage') ?>',
                     data: {
                         user_id: receiver_id,
                         message: message,
                         wisher_id: logged_user_id,
+                        email:email
                     },
                     dataType: 'JSON',
                     type: "POST",
