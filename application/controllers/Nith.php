@@ -7,16 +7,11 @@ class Nith extends CI_Controller
     {
         parent::__construct();
         $config = array();
-        $config = array(
-            'protocol' => 'sendmail',
-            'mailtype' => 'html',
-            'charset' => 'utf-8',
-            'wordwrap' => TRUE
-
-        );
-
+        $config['protocol'] = 'sendmail';
+        $config['mailpath'] = '/usr/sbin/sendmail';
+        $config['charset'] = 'iso-8859-1';
+        $config['wordwrap'] = TRUE;
         $this->load->library('email');
-
         $this->email->initialize($config);
         // Your own constructor code
     }
@@ -75,8 +70,6 @@ class Nith extends CI_Controller
                 $this->email->message('writing a crucial mail that you must receive');
                 $this->email->set_header('get it fast', 'ok i will');
                 $email_status = $this->email->send();
-                var_dump($this->email->print_debugger());
-                echo "<pre>";
                 var_dump($email_status);
                 die;
                 if ($result) {
